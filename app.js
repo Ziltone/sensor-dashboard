@@ -1,8 +1,11 @@
-// app.js
-
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 const db = firebase.database();
+
+// === Database Path Configuration ===
+// This path should be defined globally (e.g., in index.html)
+// Example: <script>window.SENSOR_DATA_PATH = "/data/sensor data/";</script>
+const DATABASE_PATH = window.SENSOR_DATA_PATH || "/your/path/here";
 
 let isPaused = false;
 const pauseButton = document.getElementById('pause-btn');
@@ -34,7 +37,7 @@ function updateSensorData(sensorData) {
 
 // Monitor the database for changes
 function monitorDatabase() {
-  const refPath = db.ref('/data/sensor data/');
+  const refPath = db.ref(DATABASE_PATH);
   refPath.on('value', (sensorData) => {
     updateSensorData(sensorData);
   });
