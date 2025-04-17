@@ -28,5 +28,4 @@
    ┣ 📄styles.css
    ┣ 📄app.js
  #install npm in the folder
-
  
