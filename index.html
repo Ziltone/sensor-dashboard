@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🌐 Sensor Data Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>🌐 Sensor Data Dashboard</h1>
+    <div id="sensor-data" class="data-display">
+      <div id="temperature" class="card">
+        <div class="label"><i class="fas fa-thermometer-half"></i> Temperature</div>
+        <div class="value" id="temp-value">--</div>°C
+      </div>
+      <div id="humidity" class="card">
+        <div class="label"><i class="fas fa-tint"></i> Humidity</div>
+        <div class="value" id="hum-value">--</div>%
+      </div>
+      <div id="soil-moisture" class="card">
+        <div class="label"><i class="fas fa-seedling"></i> Soil Moisture</div>
+        <div class="value" id="soil-value">--</div>%
+      </div>
+    </div>
+    <button id="pause-btn"><i class="fas fa-pause-circle"></i> Pause</button>
+    <p id="status-msg" class="status-message">Waiting for data...</p>
+  </div>
+
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+
+  <!-- Firebase config (you provide this) -->
+  <script src="firebaseConfig.js"></script>
+
+  <!-- App logic -->
+  <script src="app.js"></script>
+</body>
+</html>
